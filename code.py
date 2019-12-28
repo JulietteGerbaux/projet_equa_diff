@@ -22,5 +22,14 @@ def exp_solver(solver, dt, tf = 5, x0 = 1):
   plt.plot(t, [np.exp(i) for i in t])
   plt.show()
 
+def heun(f, x0, dt, n = 100):
+  t = np.linspace(0, dt*(n-1), n)
+  x = np.zeros(n)
+  x[0] = x0
+  for j in range(1, n):
+    x[j] = x[j-1] + dt/2*( f(x[j-1]) + f(x[j-1] + dt*f(x[j-1])) )
+  return t, x
+
+
 
 
