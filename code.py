@@ -15,8 +15,8 @@ def show_solver(solver, f, x0, dt, n =100):
   plt.plot(t, x)
   plt.show()
 
-def exp_solver(solver, dt, xf = 5, x0 = 1):
-  t, x = solver(lambda x : x, x0, dt, int(xf//dt))
+def exp_solver(solver, dt, tf = 5, x0 = 1):
+  t, x = solver(lambda x : x, x0, dt, int(tf//dt))
   plt.close()
   plt.plot(t, x)
   plt.plot(t, [np.exp(i) for i in t])
